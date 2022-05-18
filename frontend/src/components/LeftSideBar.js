@@ -1,5 +1,5 @@
 import React from "react"
-import { Card, ListGroup, Container, Row, Col } from "react-bootstrap"
+import { Card, ListGroup, Col } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
 const LeftSideBar = () => {
@@ -24,8 +24,8 @@ const LeftSideBar = () => {
             <Link to="/postactivity">
               <ListGroup.Item action>Post Activity</ListGroup.Item>
             </Link>
-            <Link to="/activitylist">
-              <ListGroup.Item action>Activity List</ListGroup.Item>
+            <Link to="/activitydetails">
+              <ListGroup.Item action>Activity Details</ListGroup.Item>
             </Link>
             <ListGroup.Item action>Apply for Leave</ListGroup.Item>
             <ListGroup.Item action>Late List</ListGroup.Item>

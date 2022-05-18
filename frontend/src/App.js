@@ -4,7 +4,7 @@ import LeftSideBar from "./components/LeftSideBar"
 import TodaysClass from "./components/TodaysClass"
 import EmployeeList from "./components/EmployeeList"
 import PostActivity from "./components/PostActivity"
-import ActivityList from "./components/ActivityList"
+import ActivityDetails from "./components/ActivityDetails"
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Route path="/employeelist" element={<EmployeeList />} />
         <Route path="/todaysclass" element={<TodaysClass />} />
         <Route path="/postactivity" element={<PostActivity />} />
-        <Route path="/activitylist" element={<ActivityList />} />
+        <Route path="/activitydetails" element={<ActivityDetails />} />
       </Routes>
     </Container>
   )

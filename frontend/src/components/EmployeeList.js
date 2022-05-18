@@ -11,24 +11,20 @@ const EmployeeList = () => {
               <Form>
                 <Row className="mb-3">
                   <Form.Group as={Col} controlId="formGridEmail">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control type="email" placeholder="Name" />
                   </Form.Group>
 
                   <Form.Group as={Col} controlId="formGridPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control type="text" placeholder="Designation" />
                   </Form.Group>
                 </Row>
                 <Row className="mb-3">
                   <Form.Group as={Col} controlId="formGridEmail">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control type="text" placeholder="Office Time" />
                   </Form.Group>
 
                   <Form.Group as={Col} controlId="formGridPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control type="text" placeholder="Day Off" />
                   </Form.Group>
                 </Row>
                 <Button variant="danger" type="submit" className="w-100">
