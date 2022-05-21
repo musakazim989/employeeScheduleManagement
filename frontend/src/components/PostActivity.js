@@ -1,7 +1,23 @@
-import React from "react"
-import { Col, Row, Form, Button, Card, Table } from "react-bootstrap"
+import React, { useState } from "react"
+import { Col, Row, Form, Button, Card } from "react-bootstrap"
+import axios from "axios"
 
 const PostActivity = () => {
+  const [name, setName] = useState("")
+  const [time, setTime] = useState("")
+  const [activity, setActivity] = useState("")
+
+  let handleSubmit = (e) => {
+    e.preventDefault()
+    axios.post("http://localhost:4000/activity", {
+      name,
+      time,
+      activity,
+    })
+
+    console.log("click")
+  }
+
   return (
     <>
       <Col lg={9} className="mt-5">
@@ -9,11 +25,19 @@ const PostActivity = () => {
           <Form>
             <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Control type="text" placeholder="Activity Name" />
+                <Form.Control
+                  type="text"
+                  placeholder="Activity Name"
+                  onChange={(e) => setName(e.target.value)}
+                />
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridPassword">
-                <Form.Control type="text" placeholder="Hour Take" />
+                <Form.Control
+                  type="text"
+                  placeholder="Hour Take"
+                  onChange={(e) => setTime(e.target.value)}
+                />
               </Form.Group>
             </Row>
             <Row className="mb-3">
@@ -25,10 +49,16 @@ const PostActivity = () => {
                   as="textarea"
                   rows={3}
                   placeholder="Activity Details"
+                  onChange={(e) => setActivity(e.target.value)}
                 />
               </Form.Group>
             </Row>
-            <Button variant="danger" type="submit" className="w-100">
+            <Button
+              variant="danger"
+              type="submit"
+              className="w-100"
+              onClick={handleSubmit}
+            >
               Submit
             </Button>
           </Form>

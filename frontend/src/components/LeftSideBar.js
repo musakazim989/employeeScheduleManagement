@@ -15,7 +15,7 @@ const LeftSideBar = () => {
             <Card.Text>Day Off: Musa Kazim</Card.Text>
           </Card.Body>
           <ListGroup variant="flush">
-            <Link to="/employeelist">
+            <Link to="/">
               <ListGroup.Item action>Employee List</ListGroup.Item>
             </Link>
             <Link to="/todaysclass">

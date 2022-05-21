@@ -12,7 +12,7 @@ function App() {
       <LeftSideBar />
 
       <Routes>
-        <Route path="/employeelist" element={<EmployeeList />} />
+        <Route path="/" element={<EmployeeList />} />
         <Route path="/todaysclass" element={<TodaysClass />} />
         <Route path="/postactivity" element={<PostActivity />} />
         <Route path="/activitydetails" element={<ActivityDetails />} />

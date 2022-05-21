@@ -1,7 +1,20 @@
-import React from "react"
-import { Col, Row, Form, Button, Card, Table } from "react-bootstrap"
+import React, { useState, useEffect } from "react"
+import { Col, Row, Table } from "react-bootstrap"
+import axios from "axios"
 
 const ActivityDetails = () => {
+  const [activityData, setActivityData] = useState([])
+
+  useEffect(() => {
+    async function fetchData() {
+      let { data } = await axios.get("http://localhost:4000/activity")
+
+      let Data = data
+      setActivityData(Data)
+    }
+    fetchData()
+  }, [])
+
   return (
     <>
       <Col lg={9} className="mt-5">
@@ -15,16 +28,13 @@ const ActivityDetails = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
+              {activityData.map((item, i) => (
+                <tr key={i}>
+                  <td>{item.name}</td>
+                  <td>{item.time}</td>
+                  <td>{item.activity}</td>
+                </tr>
+              ))}
             </tbody>
           </Table>
         </Row>
